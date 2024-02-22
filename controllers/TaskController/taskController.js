@@ -18,7 +18,7 @@ const getAllTask = async (req, res) => {
       message: "Task Got Successfull",
     });
   } catch (error) {
-    return Promise.reject(error);
+    res.status(400).send(error);
   }
 };
 
@@ -36,7 +36,7 @@ const getTaskById = async (req, res) => {
       message: "Task Deleted Successfull",
     });
   } catch (error) {
-    return Promise.reject(error);
+    res.status(400).send(error);
   }
 };
 
@@ -52,7 +52,7 @@ const createTask = async (req, res) => {
       message: "Task Created Successfull",
     });
   } catch (error) {
-    return Promise.reject(error);
+    res.status(400).send(error);
   }
 };
 
@@ -69,7 +69,7 @@ const updateTask = async (req, res) => {
       message: "Task Updated Successfull",
     });
   } catch (error) {
-    return Promise.reject(error);
+    res.status(400).send(error);
   }
 };
 
@@ -86,7 +86,7 @@ const deleteTask = async (req, res) => {
       message: "Task Deleted Successfull",
     });
   } catch (error) {
-    return Promise.reject(error);
+    res.status(400).send(error);
   }
 };
 

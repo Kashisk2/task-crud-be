@@ -13,7 +13,6 @@ dotenv.config({ path: ".env" });
 //all routes
 const routes = require("./routes");
 let logger = require("morgan");
-
 const app = express();
 const httpServer = require("http").createServer(app);
 
@@ -24,6 +23,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/health", (req, res) => {
   res.status(200).send({
     working: true,
